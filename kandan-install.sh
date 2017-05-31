@@ -34,17 +34,17 @@ if [ $choice -eq 1 ] ; then
     wait
     sudo yum install -y libffi libffi-devel
     wait
-    sudo yum -y install mysql-server mysql-devel mysql-common mysql-client
+    sudo yum -y install mysql-server mysql-devel
     wait
     service mysqld start
     wait
     chkconfig mysqld on
     wait
-    mysqladmin -u root password $mysqlpass
+    mysqladmin -u root password ${mysqlpass}
     wait
-    mysql -u root -p$mysqlpass -e 'create database db_kandan default character set utf8;'
-    mysql -u root -p$mysqlpass -e 'grant all on db_kandan.* to user_kandan@localhost identified by '$mysqlpass';'
-    mysql -u root -p$mysqlpass -e 'flush privileges;'
+    mysql -u root -p${mysqlpass} -e 'create database db_kandan default character set utf8;'
+    mysql -u root -p${mysqlpass} -e 'grant all on db_kandan.* to user_kandan@localhost identified by '${mysqlpass}';'
+    mysql -u root -p${mysqlpass} -e 'flush privileges;'
     wait
     yum -y install epel-release
     wait
@@ -90,7 +90,7 @@ if [ $choice -eq 1 ] ; then
     pool: 5
     timeout: 5000
     username: user_kandan
-    password: "$mysqlpass"
+    password: "${mysqlpass}"
     encoding: utf8'>>/usr/local/apl/kandan/config/database.yml" kandan
     wait
     su -lc "cd /usr/local/apl/kandan/;bundle install --without development test --path vendor/bundle" kandan
