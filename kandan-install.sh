@@ -24,18 +24,22 @@ if [ $choice -eq 1 ] ; then
     #CentOS 6x Requirements
     yum -y groupinstall "Development Tools"
     wait
-    yum -y install gcc gcc-c++
+    yum -y install sudo
     wait
-    yum -y install git
+    sudo yum -y install gcc gcc-c++
     wait
-    yum -y install libxslt-devel libxml2-devel postgresql-devel
+    sudo yum -y install git
     wait
-    yum -y install mysql-server mysql-devel
+    sudo yum -y install libxslt-devel libxml2-devel postgresql-devel
+    wait
+    sudo yum install -y libffi libffi-devel
+    wait
+    sudo yum -y install mysql-server mysql-devel
     wait
     service mysqld start
     chkconfig mysqld on
     wait
-    mysqladmin -u root password $mysqlpass
+    mysqladmin -u root -p'' password $mysqlpass
     wait
     mysql -u root -p$mysqlpass -e 'create database db_kandan default character set utf8;'
     mysql -u root -p$mysqlpass -e 'grant all on db_kandan.* to user_kandan@localhost identified by '$mysqlpass';'
