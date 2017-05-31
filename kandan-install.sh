@@ -67,8 +67,8 @@ if [ $choice = 1 ] ; then
     
     
     
-elif [ $choice = C ]
-		clear
-		then echo "Kandan Chat Installation has been canceled!"
+elif [ $choice = C ] then
+clear
+echo "Kandan Chat Installation has been canceled!"
 fi
 
