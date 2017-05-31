@@ -13,6 +13,8 @@ Supported operating systems
 Install
 =======
 
+yum -y install git
+
 git clone https://github.com/xeredin/kandan-install.git kandan-install
 
 cd kandan-install
