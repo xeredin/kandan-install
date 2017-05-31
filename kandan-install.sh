@@ -34,12 +34,13 @@ if [ $choice -eq 1 ] ; then
     wait
     sudo yum install -y libffi libffi-devel
     wait
-    sudo yum -y install mysql-server mysql-devel
+    sudo yum -y install mysql-server mysql-devel mysql-common mysql-client
     wait
     service mysqld start
+    wait
     chkconfig mysqld on
     wait
-    mysqladmin -u root -p password $mysqlpass
+    mysqladmin -u root password $mysqlpass
     wait
     mysql -u root -p$mysqlpass -e 'create database db_kandan default character set utf8;'
     mysql -u root -p$mysqlpass -e 'grant all on db_kandan.* to user_kandan@localhost identified by '$mysqlpass';'
