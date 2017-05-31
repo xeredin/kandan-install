@@ -134,7 +134,10 @@ exit 0'>>/etc/rc.d/init.d/kandan
     echo
     
 else if [ $choice = C ]; then
+
 clear
+
 echo "Kandan Chat Installation has been canceled!"
+
 fi
 fi
