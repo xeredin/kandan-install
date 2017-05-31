@@ -6,6 +6,10 @@ Description
 
 It is prepared for those who have trouble with Kandan chat installation.
 
+Supported operating systems
+===========================
+* CentOS 6x
+
 Install
 =======
 
