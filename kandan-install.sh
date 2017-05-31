@@ -69,6 +69,8 @@ if [ $choice -eq 1 ] ; then
     clear
     echo "Kandan chat install is starting"
     wait
+    mkdir cd /usr/local/apl
+    wait
     cd /usr/local/apl
     git clone https://github.com/kandanapp/kandan.git
     cd /usr/local/apl/kandan
