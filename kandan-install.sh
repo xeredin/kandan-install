@@ -36,6 +36,16 @@ if [ $choice = 1 ]
     iptables -A INPUT -p tcp -m tcp --dport 3000 -j ACCEPT
     iptables -t nat -A PREROUTING -p tcp --dport 3000 -j REDIRECT --to-port 80
     
+    # Ruby download and install
+    wget https://cache.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p481.tar.gz
+    wait
+    tar zxvf ruby-2.0.0-p481.tar.gz
+    cd ruby-2.0.0-p481
+    ./configure --disable-install-doc
+    wait
+    make;make install
+    
+    
     
     
 elif [ $choice = C ]
