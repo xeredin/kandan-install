@@ -9,7 +9,7 @@ echo
 echo "Please choose your operating system;"
 echo
 echo "1. CentOS 6x"
-echo -n "Please choose a OS [1]? "
+echo -n "Please choose a OS [1]?, Press C to cancel."
 read choice
 if [ $choice = 1 ] ; then
 
