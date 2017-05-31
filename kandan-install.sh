@@ -76,7 +76,54 @@ if [ $choice -eq 1 ] ; then
     useradd -m -s/bin/bash kandan
     chown -R kandan:kandan /usr/local/apl/kandan
     wait
-    su -lc "" kandan
+    su -lc "echo 'production:
+    adapter: mysql2
+    host: localhost
+    database: db_kandan
+    pool: 5
+    timeout: 5000
+    username: user_kandan
+    password: "$mysqlpass"
+    encoding: utf8'>>/usr/local/apl/kandan/config/database.yml" kandan
+    wait
+    su -lc "cd /usr/local/apl/kandan/;bundle install --without development test --path vendor/bundle" kandan
+    wait
+    su -lc "cd /usr/local/apl/kandan/;RAILS_ENV=production bundle exec rake db:create db:migrate kandan:bootstrap" kandan
+    wait
+    su -lc "cd /usr/local/apl/kandan/;RAILS_ENV=production bundle exec rake assets:precompile" kandan
+    wait
+    su -lc "cd /usr/local/apl/kandan/;bundle exec thin start -e production" kandan
+    wait
+    echo '#!/bin/bash
+prog=kandan
+
+PATH=$PATH:/usr/local/bin
+case "$1" in
+  start)
+    echo -n $"Starting $prog ..."
+    su -lc "cd /usr/local/apl/kandan && bundle exec thin start -e production -d" kandan
+    echo "Done."
+    ;;
+  stop)
+    echo -n $"Stopping $prog ..."
+    su -lc "cd /usr/local/apl/kandan && bundle exec thin stop -e production" kandan
+    echo "Done."
+    ;;
+  restart)
+    echo -n $"Restarting $prog ..."
+    su -lc "cd /usr/local/apl/kandan && bundle exec thin restart -e production -d" kandan
+    echo "Done."
+    ;;
+esac
+exit 0'>>/etc/rc.d/init.d/kandan
+    wait
+    chown -R kandan:kandan /etc/rc.d/init.d/kandan
+    chmod 755 /etc/rc.d/init.d/kandan
+    chkconfig --add kandan
+    chkconfig kandan on
+    wait
+    clear
+    echo ""
     
 else if [ $choice = C ]; then
 clear
