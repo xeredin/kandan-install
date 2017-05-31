@@ -39,7 +39,7 @@ if [ $choice -eq 1 ] ; then
     service mysqld start
     chkconfig mysqld on
     wait
-    mysqladmin -u root -p'' password $mysqlpass
+    mysqladmin -u root -p password $mysqlpass
     wait
     mysql -u root -p$mysqlpass -e 'create database db_kandan default character set utf8;'
     mysql -u root -p$mysqlpass -e 'grant all on db_kandan.* to user_kandan@localhost identified by '$mysqlpass';'
