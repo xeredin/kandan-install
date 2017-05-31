@@ -9,9 +9,10 @@ echo
 echo "Please choose your operating system;"
 echo
 echo "1. CentOS 6x"
-echo -n "Please choose a OS [1]?, Press C to cancel."
+echo -n "Please choose a OS [1]?, Press C to cancel:"
+echo
 read choice
-if [ $choice = 1 ] ; then
+if [ $choice -eq 1 ] ; then
 
 	echo "Please enter a user password for mysql database;"
 	read mysqlpass
@@ -33,9 +34,11 @@ if [ $choice = 1 ] ; then
     service mysqld start
     chkconfig mysqld on
     wait
-    mysql -u root -p -e 'create database db_kandan default character set utf8;'
-    mysql -u root -p -e 'grant all on db_kandan.* to user_kandan@localhost identified by '$mysqlpass';'
-    mysql -u root -p -e 'flush privileges;'
+mysqladmin -u root password $mysqlpass
+wait
+    mysql -u root -p$mysqlpass -e 'create database db_kandan default character set utf8;'
+    mysql -u root -p$mysqlpass -e 'grant all on db_kandan.* to user_kandan@localhost identified by '$mysqlpass';'
+    mysql -u root -p$mysqlpass -e 'flush privileges;'
     wait
     yum -y install epel-release
     wait
@@ -65,10 +68,8 @@ if [ $choice = 1 ] ; then
     clear
     
     
-    
-    
-elif [ $choice = C ] then
+else if [ $choice = C ]; then
 clear
 echo "Kandan Chat Installation has been canceled!"
 fi
-
+fi
