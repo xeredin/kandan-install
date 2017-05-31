@@ -73,6 +73,10 @@ if [ $choice -eq 1 ] ; then
     git clone https://github.com/kandanapp/kandan.git
     cd /usr/local/apl/kandan
     echo "gem 'mysql2', '~> 0.3.10'">>Gemfile
+    useradd -m -s/bin/bash kandan
+    chown -R kandan:kandan /usr/local/apl/kandan
+    wait
+    su -lc "" kandan
     
 else if [ $choice = C ]; then
 clear
