@@ -123,7 +123,15 @@ exit 0'>>/etc/rc.d/init.d/kandan
     chkconfig kandan on
     wait
     clear
-    echo ""
+    echo "################################################################################"
+    echo "Congratulations, the installation of the candle has been completed successfully."
+    echo "################################################################################"
+    echo
+    echo "Start, stop and restart commands;"
+    echo "/etc/init.d/kandan start"
+    echo "/etc/init.d/kandan restart"
+    echo "/etc/init.d/kandan stop"
+    echo
     
 else if [ $choice = C ]; then
 clear
