@@ -14,7 +14,8 @@ echo
 read choice
 if [ $choice -eq 1 ] ; then
 
-	echo "Please enter a user password for mysql database;"
+	echo "Please enter a user password for mysql database:"
+	echo
 	read mysqlpass
 	wait
 	echo "Requirements are being set up."
@@ -34,8 +35,8 @@ if [ $choice -eq 1 ] ; then
     service mysqld start
     chkconfig mysqld on
     wait
-mysqladmin -u root password $mysqlpass
-wait
+    mysqladmin -u root password $mysqlpass
+    wait
     mysql -u root -p$mysqlpass -e 'create database db_kandan default character set utf8;'
     mysql -u root -p$mysqlpass -e 'grant all on db_kandan.* to user_kandan@localhost identified by '$mysqlpass';'
     mysql -u root -p$mysqlpass -e 'flush privileges;'
@@ -66,7 +67,12 @@ wait
     gem update --system --no-rdoc --no-ri
     gem install bundler --no-rdoc --no-ri
     clear
-    
+    echo "Kandan chat install is starting"
+    wait
+    cd /usr/local/apl
+    git clone https://github.com/kandanapp/kandan.git
+    cd /usr/local/apl/kandan
+    echo "gem 'mysql2', '~> 0.3.10'">>Gemfile
     
 else if [ $choice = C ]; then
 clear
