@@ -11,9 +11,11 @@ echo
 echo "1. CentOS 6x"
 echo -n "Please choose a OS [1]? "
 read choice
-if [ $choice = 1 ]
-
-    #CentOS 6x Requirement installations
+if [ $choice = 1 ] ; then
+	echo "Requirements are being set up."
+	wait
+	
+    #CentOS 6x Requirements
     yum -y groupinstall "Development Tools"
     wait
     yum -y install gcc gcc-c++
@@ -44,7 +46,6 @@ if [ $choice = 1 ]
     ./configure --disable-install-doc
     wait
     make;make install
-    
     
     
     
