@@ -1,9 +1,6 @@
 # kandan-install
 Quick Kandan chat install script.
 
-[![Build Status](https://travis-ci.org/xeredin/kandan-install.png?branch=master)](https://travis-ci.org/xeredin/kandan-install) [![Code Climate](https://codeclimate.com/github/xeredin/kandan-install/badges/gpa.svg)](https://codeclimate.com/github/xeredin/kandan-install) [![Code Coverage](https://scrutinizer-ci.com/g/xeredin/kandan-install/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/xeredin/kandan-install/?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/xeredin/kandan-install/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/xeredin/kandan-install/?branch=master) master<br />
-[![Build Status](https://travis-ci.org/xeredin/kandan-install.png?branch=development)](https://travis-ci.org/xeredin/kandan-install) [![Code Coverage](https://scrutinizer-ci.com/g/xeredin/kandan-install/badges/coverage.png?b=development)](https://scrutinizer-ci.com/g/xeredin/kandan-install/?branch=development) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/xeredin/kandan-install/badges/quality-score.png?b=development)](https://scrutinizer-ci.com/g/xeredin/kandan-install/?branch=development)  development
-
 Description
 ===========
 
