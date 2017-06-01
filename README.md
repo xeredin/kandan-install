@@ -41,4 +41,4 @@ Donations to this project are going directly to [xeredin](https://github.com/xer
 Team Members
 ============
 
-Author and Project Owner: [xeredin](https://github.com/xeredin) - Hayrettin Kilic
+Author and Project Owner: [xeredin](https://github.com/xeredin) - Xêro Mîrza
