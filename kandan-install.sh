@@ -1,6 +1,6 @@
 #!/bin/bash
-# Hayrettin Kilic - CentOS 6x Kandan Chat Build Script
-# hayrettin@kilic.email
+# Xêro Mîrza - CentOS 6x Kandan Chat Build Script
+# xero@xeredin.com
 clear
 echo "######################################################"
 echo "Welcome to Kandan Chat Installation!"
