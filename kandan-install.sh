@@ -131,7 +131,7 @@ exit 0'>>/etc/rc.d/init.d/kandan
     wait
     clear
     echo "################################################################################"
-    echo "Congratulations, the installation of the candle has been completed successfully."
+    echo "Congratulations, the installation has been completed successfully."
     echo "################################################################################"
     echo
     echo "Start, stop and restart commands;"
