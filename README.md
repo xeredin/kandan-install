@@ -24,13 +24,6 @@ chmod +x kandan-install.sh
 ./kandan-install.sh
 
 
-Donations
-=========
-
-Donations to this project are going directly to [xeredin](https://github.com/xeredin), the original author of this project:
-
-* Dogecoin (DOGE) address: DGy2ip2mtfLn5tdxRGKcSg4RPCngbw4chV
-
 Team Members
 ============
 
