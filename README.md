@@ -1,5 +1,5 @@
 # kandan-install
-Quick Kandan chat install script.
+Quick Kandan [(KandanApp)](https://github.com/kandanapp) chat install script.
 
 Description
 ===========
